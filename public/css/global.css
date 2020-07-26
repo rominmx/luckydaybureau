@@ -1,0 +1,49 @@
+:root {
+    --font-custom: 'Montserrat', serif;
+    --color-green: #04e329;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-custom);
+    font-size: 24px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+a {
+    font-weight: 700;
+    color: var(--color-green);
+}
