@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header>
-      <h1>Бюро счастливого дня</h1>
-      <div>Нас интересует игра слов и городская симфония взглядов</div>
+    <header :class="$style.header">
+      <h1 :class="$style.title">Бюро счастливого дня</h1>
+      <div :class="$style.description">Нас интересует игра слов и городская симфония взглядов</div>
     </header>
     <nav :class="$style.nav">
       <router-link to="/" :class="$style.navItem">Главная</router-link> |
@@ -14,9 +14,27 @@
 </template>
 
 <style module>
+.header {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  margin-bottom: 48px;
+}
+
+.title {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 48px;
+}
+
+.description {
+  font-size: 24px;
+}
+
 .nav {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
 }
 
 .navItem {

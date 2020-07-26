@@ -1,6 +1,7 @@
 :root {
     --font-custom: 'Montserrat', serif;
     --color-green: #04e329;
+    --padding: 48px;
 }
 
 @font-face {
