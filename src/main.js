@@ -8,3 +8,11 @@ new Vue({
   router,
   render: (h) => h(App),
 }).$mount('#app');
+
+/**
+ * TODO
+ * Dark mode
+ * Banner
+ * Basic layout
+ * Mobile version
+ */
