@@ -1,14 +1,17 @@
 <template>
   <div>
-    <header :class="$style.header">
-      <h1 :class="$style.title">Бюро счастливого дня</h1>
-      <div :class="$style.description">Нас интересует игра слов и городская симфония взглядов</div>
-    </header>
-    <nav :class="$style.nav">
-      <router-link to="/" :class="$style.navItem">Главная</router-link> |
-      <router-link to="/look" :class="$style.navItem">Смотреть</router-link> |
-      <router-link to="/write" :class="$style.navItem">Написать</router-link>
-    </nav>
+    <div>
+      <header :class="$style.header">
+        <h1 :class="$style.title">Бюро счастливого дня</h1>
+        <div :class="$style.description">Нас интересует игра слов и городская
+          симфония взглядов</div>
+      </header>
+      <nav :class="$style.nav">
+        <router-link to="/" :class="$style.navItem">Главная</router-link>
+        <router-link to="/look" :class="$style.navItem">Смотреть</router-link>
+        <router-link to="/write" :class="$style.navItem">Написать</router-link>
+      </nav>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -17,29 +20,31 @@
 .header {
   padding-left: var(--padding);
   padding-right: var(--padding);
-  margin-bottom: 48px;
+  margin-top: 16px;
+  margin-bottom: 28px;
 }
 
 .title {
-  margin-top: 48px;
-  margin-bottom: 16px;
-  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 96px;
 }
 
 .description {
-  font-size: 24px;
+  font-size: 64px;
 }
 
 .nav {
-  margin-top: 2em;
-  margin-bottom: 2em;
   padding-left: var(--padding);
   padding-right: var(--padding);
+  font-size: 36px;
+  margin-bottom: 48px;
 }
 
 .navItem {
   color: #000;
   font-weight: 700;
+  margin-right: 1em;
 }
 </style>
 

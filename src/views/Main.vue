@@ -33,12 +33,12 @@ export default {
 }
 
 .text {
-  flex-basis: 50%;
+  flex-basis: 66%;
   padding-left: var(--padding);
   margin-top: 0;
   margin-bottom: 0;
   color: #fff;
-  font-size: 32px;
+  font-size: 48px;
   line-height: 1.5;
 }
 </style>
