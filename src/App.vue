@@ -44,7 +44,7 @@
 .navItem {
   color: #000;
   font-weight: 700;
-  margin-right: 1em;
+  margin-right: 1.5em;
 }
 </style>
 
