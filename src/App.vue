@@ -35,6 +35,7 @@ export default {
 @import './stylesheets/mixins';
 
 .container {
+  background-color: var(--color-green);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -114,6 +115,10 @@ export default {
   color: #fff;
   font-weight: 700;
   margin-right: 1.5em;
+
+  &:hover {
+    color: var(--color-green);
+  }
 
   @include mobile {
     margin-right: 0;
