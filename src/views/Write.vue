@@ -1,13 +1,18 @@
 <template>
-  <div :class="$style.container">
-    Пишем и проектируем в стол. Хочешь стать частью команды - пиши
-    <a href="mailto:buroschastlivogodnya@gmail.com">buroschastlivogodnya@gmail.com</a>
-  </div>
+  <banner>
+    Пишем и проектируем в стол.<br /> Хочешь стать частью команды -
+    <a href="mailto:buroschastlivogodnya@gmail.com">пиши</a>
+  </banner>
 </template>
 
 <script>
+import Banner from '../components/Banner.vue';
+
 export default {
   name: 'Write',
+  components: {
+    Banner,
+  },
 };
 </script>
 
