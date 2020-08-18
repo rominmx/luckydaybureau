@@ -1,5 +1,11 @@
 <template>
-  <div :class="$style.container">
+  <div
+    :class="[$style.container, {
+      [$style.pageMain]: $route.name === 'Main',
+      [$style.pageWrite]: $route.name === 'Write',
+      [$style.pageLook]: $route.name === 'Look',
+    }]"
+  >
     <header :class="$style.header">
       <h1 :class="$style.title">Бюро счастливого дня</h1>
       <h2 :class="$style.description">Нас интересует игра слов и городская
@@ -14,9 +20,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      onPageMain: true,
+      onPageWrite: false,
+    };
+  },
+};
+</script>
+
 <style module>
 .container {
-  background-image: url("./assets/luckyday.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -24,6 +40,22 @@
   flex-direction: column;
   justify-content: stretch;
   min-height: 100%;
+}
+
+.container.pageLook .header {
+  color: #000;
+}
+
+.container.pageLook .navItem {
+  color: #000;
+}
+
+.pageMain {
+  background-image: url('./assets/luckyday.jpg');
+}
+
+.pageWrite {
+  background-image: url('./assets/we.jpg');
 }
 
 .header {

@@ -12,7 +12,8 @@ new Vue({
 /**
  * TODO
  * Dark mode
- * Banner
- * Basic layout
  * Mobile version
+ * Burger menu
+ * Lazy loading for images
+ * Change background on different pages
  */
