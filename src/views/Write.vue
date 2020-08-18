@@ -1,6 +1,6 @@
 <template>
   <banner>
-    Пишем и проектируем в стол.<br /> Хочешь стать частью команды -
+    Пишем и проектируем в стол.<br /> Хочешь стать частью команды —
     <a href="mailto:buroschastlivogodnya@gmail.com">пиши</a>
   </banner>
 </template>

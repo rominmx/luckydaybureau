@@ -12,7 +12,9 @@ export default {
 };
 </script>
 
-<style module>
+<style lang="scss" module>
+@import '../stylesheets/mixins';
+
 .container {
   display: flex;
   align-items: center;
@@ -28,9 +30,18 @@ export default {
   font-size: 56px;
   line-height: 1.5;
   font-weight: 300;
+
+  @include mobile {
+    flex-basis: 100%;
+    padding-left: var(--padding-mobile);
+    padding-right: var(--padding-mobile);
+    font-size: 22px;
+  }
 }
 
-.content a {
-  color: #fff;
+.content {
+  a {
+    color: #fff;
+  }
 }
 </style>

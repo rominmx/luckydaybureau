@@ -40,11 +40,27 @@ export default {
 };
 </script>
 
-<style module>
+<style lang="scss" module>
+@import '../stylesheets/mixins.scss';
+
 .container {
   padding-left: var(--padding);
   padding-right: var(--padding);
   margin-top: 48px;
-  color: #fff;
+  color: #000;
+  line-height: 1.5;
+
+  @include mobile {
+    margin-top: 32px;
+    padding-left: var(--padding-mobile);
+    padding-right: var(--padding-mobile);
+    font-size: 16px;
+
+    img {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
 }
 </style>

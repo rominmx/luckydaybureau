@@ -31,7 +31,9 @@ export default {
 };
 </script>
 
-<style module>
+<style lang="scss" module>
+@import './stylesheets/mixins';
+
 .container {
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -40,14 +42,16 @@ export default {
   flex-direction: column;
   justify-content: stretch;
   min-height: 100%;
-}
 
-.container.pageLook .header {
-  color: #000;
-}
+  &.pageLook {
+    .header {
+      color: #000;
+    }
 
-.container.pageLook .navItem {
-  color: #000;
+    .navItem {
+      color: #000;
+    }
+  }
 }
 
 .pageMain {
@@ -64,12 +68,21 @@ export default {
   margin-top: 16px;
   margin-bottom: 28px;
   color: #fff;
+
+  @include mobile {
+    padding-left: var(--padding-mobile);
+    padding-right: var(--padding-mobile);
+  }
 }
 
 .title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 96px;
+
+  @include mobile {
+    font-size: 28px;
+  }
 }
 
 .description {
@@ -77,18 +90,34 @@ export default {
   font-weight: 400;
   margin-top: 12px;
   margin-bottom: 12px;
+
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
 .nav {
   padding-left: var(--padding);
   padding-right: var(--padding);
   font-size: 36px;
+
+  @include mobile {
+    padding-left: var(--padding-mobile);
+    padding-right: var(--padding-mobile);
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .navItem {
   color: #fff;
   font-weight: 700;
   margin-right: 1.5em;
+
+  @include mobile {
+    margin-right: 0;
+  }
 }
 </style>
 
