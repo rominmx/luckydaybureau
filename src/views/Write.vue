@@ -70,25 +70,29 @@ export default {
         .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
         .join('&');
     },
-    handleSubmit() {
-      this.loading = true;
+    sendData() {
       fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: this.encode({
-          'form-name': 'contact-us',
+          'form-name': 'contacts',
           ...this.formData,
         }),
-      })
-        .then(() => {
-          this.success = true;
-        })
-        .catch((error) => { console.log(error); })
-        .finally(() => {
-          this.loading = false;
-        });
+      });
+    },
+    async handleSubmit() {
+      this.loading = true;
+
+      try {
+        await this.sendData();
+        this.success = true;
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.loading = false;
+      }
     },
   },
 };
