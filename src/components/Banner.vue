@@ -35,7 +35,7 @@ export default {
     flex-basis: 100%;
     padding-left: var(--padding-mobile);
     padding-right: var(--padding-mobile);
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
   <banner>
-    <div>
+    <div :class="$style.text">
       Пишем и проектируем в стол.<br /> Хочешь стать частью команды — напиши нам:
     </div>
     <form
@@ -105,17 +105,25 @@ export default {
 <style lang="scss" module>
 @import '../stylesheets/mixins';
 
+.text {
+  font-size: 36px;
+
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
 .form {
   margin-top: 1em;
 }
 
 .input {
   background-color: transparent;
-  color: #fff;
+  color: var(--color-green);
   font-family: var(--font-custom);
   font-weight: 400;
   font-size: 18px;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-green);
   border-radius: 0;
   outline: none;
   padding: 1em;
@@ -141,7 +149,7 @@ export default {
   border: none;
   color: #fff;
   font-size: 18px;
-  padding: .8em 1em;
+  padding: .8em 2em;
   background-color: var(--color-green);
   box-sizing: border-box;
   cursor: pointer;
