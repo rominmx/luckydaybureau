@@ -3,8 +3,9 @@
     <form
       name="my-form"
       method="post"
-      data-netlify
+      data-netlify="true"
       data-netlify-honeypot="bot-field"
+      enctype="application/x-www-form-urlencoded"
       @submit.prevent="handleSubmit"
     >
       <input type="hidden" name="form-name" value="my-form" />
@@ -15,7 +16,7 @@
         <input
           type="text"
           name="message"
-          v-model="message"
+          v-model="formData.message"
         />
       </div>
       <input type="submit" value="Написать" />
@@ -37,17 +38,24 @@ export default {
   },
   data() {
     return {
-      message: '',
+      formData: {
+        message: '',
+      },
     };
   },
   methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join('&');
+    },
     handleSubmit() {
       fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(this.message),
+        body: this.encode(this.formData),
       });
     },
   },
