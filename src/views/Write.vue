@@ -19,7 +19,7 @@
           v-model="formData.message"
         />
       </div>
-      <input type="submit" value="Написать" />
+      <button @click="handleSubmit">Написать</button>
     </form>
     <banner>
       Пишем и проектируем в стол.<br /> Хочешь стать частью команды —
