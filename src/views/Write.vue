@@ -1,14 +1,14 @@
 <template>
   <div>
     <form
-      name="my-form"
+      name="contact-us"
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       enctype="application/x-www-form-urlencoded"
       @submit.prevent="handleSubmit"
     >
-      <input type="hidden" name="form-name" value="my-form" />
+      <input type="hidden" name="form-name" value="contact-us" />
       <div>
         <div>
           <label>Сообщение</label>
@@ -55,7 +55,10 @@ export default {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: this.encode(this.formData),
+        body: this.encode({
+          'form-name': 'contact-us',
+          ...this.formData,
+        }),
       });
     },
   },
