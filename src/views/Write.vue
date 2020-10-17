@@ -9,6 +9,9 @@
     >
       <input type="hidden" name="form-name" value="my-form" />
       <div>
+        <div>
+          <label>Сообщение</label>
+        </div>
         <input
           type="text"
           name="message"
