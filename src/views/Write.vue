@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <banner>
+    <div>
+      Пишем и проектируем в стол.<br /> Хочешь стать частью команды — напиши нам:
+    </div>
     <form
       name="contact-us"
       method="post"
@@ -11,22 +14,36 @@
     >
       <input type="hidden" name="form-name" value="contact-us" />
       <div>
-        <div>
-          <label>Сообщение</label>
-        </div>
         <input
           type="text"
-          name="message"
-          v-model="formData.message"
+          name="name"
+          v-model="formData.name"
+          placeholder="Ваше имя *"
         />
       </div>
-      <input type="submit" value="Написать" />
+      <div>
+        <input
+          type="text"
+          name="email"
+          v-model="formData.email"
+          placeholder="Электронная почта *"
+        >
+      </div>
+      <div>
+        <textarea
+          name="message"
+          v-model="formData.message"
+          placeholder="Сообщение"
+        />
+      </div>
+      <input
+        type="submit"
+        :disabled="disabled"
+        value="Отправить"
+      />
+      <div v-if="success">Сообщение отправлено!</div>
     </form>
-    <banner>
-      Пишем и проектируем в стол.<br /> Хочешь стать частью команды —
-      <a href="mailto:buroschastlivogodnya@gmail.com">пиши</a>
-    </banner>
-  </div>
+  </banner>
 </template>
 
 <script>
@@ -41,8 +58,17 @@ export default {
     return {
       formData: {
         message: '',
+        email: '',
+        name: '',
       },
+      loading: false,
+      success: false,
     };
+  },
+  computed: {
+    disabled() {
+      return this.formData.name.trim() === '' || this.formData.email.trim() === '';
+    },
   },
   methods: {
     encode(data) {
@@ -50,7 +76,7 @@ export default {
         .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
         .join('&');
     },
-    handleSubmit() {
+    sendData() {
       fetch('/', {
         method: 'POST',
         headers: {
@@ -60,9 +86,19 @@ export default {
           'form-name': 'contact-us',
           ...this.formData,
         }),
-      })
-        .then(() => { console.log('success!'); })
-        .catch((error) => { console.log(error); });
+      });
+    },
+    async handleSubmit() {
+      this.loading = true;
+
+      try {
+        await this.sendData();
+        this.success = true;
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.loading = false;
+      }
     },
   },
 };
