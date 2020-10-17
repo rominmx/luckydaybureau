@@ -50,7 +50,7 @@ export default {
         .join('&');
     },
     handleSubmit() {
-      fetch('/write', {
+      fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
