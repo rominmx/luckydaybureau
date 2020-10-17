@@ -7,7 +7,6 @@
       name="contacts"
       method="post"
       data-netlify="true"
-      action="/write"
       data-netlify-honeypot="bot-field"
       enctype="application/x-www-form-urlencoded"
       @submit.prevent="handleSubmit"
