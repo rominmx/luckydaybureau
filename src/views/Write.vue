@@ -4,14 +4,15 @@
       Пишем и проектируем в стол.<br /> Хочешь стать частью команды — напиши нам:
     </div>
     <form
-      name="contact-us"
+      name="contacts"
       method="post"
       data-netlify="true"
+      action="/write"
       data-netlify-honeypot="bot-field"
       enctype="application/x-www-form-urlencoded"
       @submit.prevent="handleSubmit"
     >
-      <input type="hidden" name="form-name" value="contact-us" />
+      <input type="hidden" name="form-name" value="contacts" />
       <div>
         <input
           type="text"
@@ -76,7 +77,7 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: this.encode({
-          'form-name': 'contact-us',
+          'form-name': 'contacts',
           ...this.formData,
         }),
       });
