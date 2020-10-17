@@ -4,6 +4,7 @@
       name="contact-us"
       method="post"
       data-netlify="true"
+      action="/"
       data-netlify-honeypot="bot-field"
       enctype="application/x-www-form-urlencoded"
       @submit.prevent="handleSubmit"
@@ -60,9 +61,7 @@ export default {
           ...this.formData,
         }),
       })
-        .then(() => {
-          this.$router.push('/');
-        })
+        .then(() => { console.log('success!'); })
         .catch((error) => { console.log(error); });
     },
   },
