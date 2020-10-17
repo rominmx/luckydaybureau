@@ -50,7 +50,7 @@ export default {
         .join('&');
     },
     handleSubmit() {
-      fetch('/', {
+      fetch('/write', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -59,7 +59,9 @@ export default {
           'form-name': 'contact-us',
           ...this.formData,
         }),
-      });
+      })
+        .then(() => { console.log('success!'); })
+        .catch((error) => { console.log(error); });
     },
   },
 };
