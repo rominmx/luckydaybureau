@@ -132,6 +132,11 @@ export default {
   margin-bottom: 2em;
   box-sizing: border-box;
 
+  &:focus {
+    color: #fff;
+    border-color: #fff;
+  }
+
   @include mobile {
     width: 100%;
     font-size: 16px;
