@@ -5,6 +5,7 @@
       method="post"
       data-netlify
       data-netlify-honeypot="bot-field"
+      @submit.prevent="handleSubmit"
     >
       <input type="hidden" name="form-name" value="my-form" />
       <div>
@@ -35,6 +36,17 @@ export default {
     return {
       message: '',
     };
+  },
+  methods: {
+    handleSubmit() {
+      fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(this.message),
+      });
+    },
   },
 };
 </script>
