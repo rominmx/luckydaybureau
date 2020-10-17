@@ -7,7 +7,6 @@
       name="contact-us"
       method="post"
       data-netlify="true"
-      action="/write"
       data-netlify-honeypot="bot-field"
       enctype="application/x-www-form-urlencoded"
       @submit.prevent="handleSubmit"
@@ -38,7 +37,6 @@
       </div>
       <input
         type="submit"
-        :disabled="disabled"
         value="Отправить"
       />
       <div v-if="success">Сообщение отправлено!</div>
@@ -64,11 +62,6 @@ export default {
       loading: false,
       success: false,
     };
-  },
-  computed: {
-    disabled() {
-      return this.formData.name.trim() === '' || this.formData.email.trim() === '';
-    },
   },
   methods: {
     encode(data) {
