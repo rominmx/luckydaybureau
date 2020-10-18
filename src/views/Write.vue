@@ -42,6 +42,7 @@
       <input
         type="submit"
         value="Отправить"
+        :disabled="disabled"
         :class="$style.button"
       />
       <div v-if="success">Сообщение отправлено!</div>
@@ -67,6 +68,13 @@ export default {
       loading: false,
       success: false,
     };
+  },
+  computed: {
+    disabled() {
+      const { name, email } = this.formData;
+
+      return name.trim() === '' || email.trim() === '';
+    }
   },
   methods: {
     encode(data) {
