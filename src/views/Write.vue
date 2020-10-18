@@ -74,7 +74,7 @@ export default {
       const { name, email } = this.formData;
 
       return name.trim() === '' || email.trim() === '';
-    }
+    },
   },
   methods: {
     encode(data) {
